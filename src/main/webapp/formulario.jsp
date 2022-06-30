@@ -12,13 +12,19 @@
 <body>
     <fieldset>
         <legend>Fomulario Nova Empresa</legend>
-        <form action="/gerenciador/novaEmpresa" method="post">
-            <label>Nome: <input type="text" name="nome"/></label><br/><br/>
-            <input type="submit" value="Click Aqui para Cadastrar">
+        
+        <form action="/gerenciador/entrada" method="post">
+            <label>Nome: <input type="text" name="nome"/></label><br/>
+            <input type="hidden" value="criarEmpresa" name="acction"/>
+            <input type="submit" value="CADASTRAR">
         </form>
-        <form action="/gerenciador/listempresas">
-        	<input type="submit" value="Listar Empresas">
+        
+        <form action="/gerenciador/entrada" method="get">
+            <input type="hidden" name="acction" value="listarEmpresas"/><br/>
+            <input type="submit" value="LISTAR EMPRESAS">
         </form>
+        
+   
     </fieldset>
     
 </body>

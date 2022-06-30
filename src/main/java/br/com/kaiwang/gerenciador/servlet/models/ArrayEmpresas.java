@@ -1,4 +1,4 @@
-package br.com.kaiwang.gerenciador.servlet;
+package br.com.kaiwang.gerenciador.servlet.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +6,11 @@ import java.util.List;
 public class ArrayEmpresas {
 	
 	private static List<Empresa> empresa = new ArrayList<>();
+	
 	public ArrayEmpresas() {
 		
 	}
-	public void add(Empresa empresa)
+	public static void add(Empresa empresa)
 	{
 		ArrayEmpresas.empresa.add(empresa);
 	}

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.util.ArrayList, br.com.kaiwang.gerenciador.servlet.Empresa" %>
+<%@ page import="java.util.ArrayList,br.com.kaiwang.gerenciador.servlet.models.Empresa" %>
 
 <!DOCTYPE html>
 <html>
@@ -17,10 +17,21 @@
 		for(Empresa empresa: lista)
 		{ 
 		%>
-			<li>
-			<%=empresa.getNome()%>
-			<button><a href="/gerenciador/removerEmpresa?id=<%=empresa.getId()%>">DEL</a></button>
-			</li>
+		<fieldset>
+			<h2>Empresa code: <%=empresa.getId()%> Empresa nome: <%=empresa.getNome()%></h2>
+				<form action="/gerenciador/entrada" method="get">
+					<input type="hidden" value="removerEmpresa" name="acction"/>
+					<input type="hidden" value="<%=empresa.getId()%>" name="id"/>
+					<input type="submit" value="DELETE" />
+				</form>
+				
+				<form action="/gerenciador/entrada" method="get">
+					<input type="hidden" value="editarEmpresa" name="acction"/>
+					<input type="hidden" value="<%=empresa.getId()%>" name="id"/>
+					<input type="submit" value="EDITAR" />
+				</form>
+				
+			</fieldset>
 		<% 
 		}; 
 		%>
