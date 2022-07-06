@@ -4,6 +4,7 @@ import br.com.kaiwang.gerenciador.servlet.controller.CriarEmpresas;
 import br.com.kaiwang.gerenciador.servlet.controller.EditarPegarDados;
 import br.com.kaiwang.gerenciador.servlet.controller.ListarEmpresas;
 import br.com.kaiwang.gerenciador.servlet.controller.RemoverEmpresas;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,26 +21,39 @@ public class EmpresaRouter extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) {
 		try {
+			
+			String ROTASJSP = null;
+			
 			System.out.println("ENTROU NA ROTA ENTRADA >>>");
 			String acction = request.getParameter("acction");
 			
 			if(acction.equals("listarEmpresas")) {
 				
-				ListarEmpresas.acction(request, response);
+				ROTASJSP = ListarEmpresas.acction(request, response);
 				
 			}else if(acction.equals("listarEmpresaId")) {
 				
 			}else if(acction.equals("criarEmpresa")) {
 				
-				CriarEmpresas.acction(request, response);
+				ROTASJSP = CriarEmpresas.acction(request, response);
 				
 			}else if(acction.equals("editarEmpresa")) {
 				
-				EditarPegarDados.acction(request, response);
+				ROTASJSP = EditarPegarDados.acction(request, response);
 				
 			}else if(acction.equals("removerEmpresa")) {
-		
-				RemoverEmpresas.acction(request, response);
+				System.out.println("ENTROU EM REMOVER EMPRESA");
+				ROTASJSP = RemoverEmpresas.acction(request, response);
+			}
+			
+			String[] ForwardERedirect = ROTASJSP.split(":");
+			if(ForwardERedirect[0].equals("Forward")) {
+				RequestDispatcher rd = request.getRequestDispatcher(ForwardERedirect[1]);
+				rd.forward(request, response);
+
+			}
+			else {
+				response.sendRedirect(ForwardERedirect[1]);
 			}
 			
 		}catch(Exception err) {

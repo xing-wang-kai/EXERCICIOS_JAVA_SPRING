@@ -2,7 +2,6 @@ package br.com.kaiwang.gerenciador.servlet.controller;
 
 import br.com.kaiwang.gerenciador.servlet.models.ArrayEmpresas;
 import br.com.kaiwang.gerenciador.servlet.models.Empresa;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,7 +30,5 @@ public class EditarEmpresas extends HttpServlet {
 		}catch(Exception err) {
 			System.out.println("ERROR: " + err.getMessage());
 		}
-		
-		
 	}
 }

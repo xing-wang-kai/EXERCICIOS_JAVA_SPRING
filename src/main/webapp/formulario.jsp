@@ -16,12 +16,12 @@
         <form action="/gerenciador/entrada" method="post">
             <label>Nome: <input type="text" name="nome"/></label><br/>
             <input type="hidden" value="criarEmpresa" name="acction"/>
-            <input type="submit" value="CADASTRAR">
+            <input class="button" type="submit" value="CADASTRAR">
         </form>
         
         <form action="/gerenciador/entrada" method="get">
             <input type="hidden" name="acction" value="listarEmpresas"/><br/>
-            <input type="submit" value="LISTAR EMPRESAS">
+            <input class="button" type="submit" value="LISTAR EMPRESAS">
         </form>
         
    

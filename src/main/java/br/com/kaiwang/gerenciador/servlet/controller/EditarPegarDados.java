@@ -2,12 +2,11 @@ package br.com.kaiwang.gerenciador.servlet.controller;
 
 import br.com.kaiwang.gerenciador.servlet.models.ArrayEmpresas;
 import br.com.kaiwang.gerenciador.servlet.models.Empresa;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class EditarPegarDados {
-	public static void acction(HttpServletRequest request, HttpServletResponse response) {
+	public static String acction(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("ENTROU NA ROTA EDITAR");
 		try {
 			
@@ -18,12 +17,13 @@ public class EditarPegarDados {
 			
 			Empresa empresa = empresas.getEmpresa(id);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/editarEmpresas.jsp");
 			request.setAttribute("empresa", empresa);
-			rd.forward(request, response);
+			
+			return "Forward:/editarEmpresas.jsp";
 			
 		}catch(Exception err) {
 			System.out.println("ERROR: " + err.getMessage());
+			return "Forward:/Error.jsp";
 		}
 		
 		
