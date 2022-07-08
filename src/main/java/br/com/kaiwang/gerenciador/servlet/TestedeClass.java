@@ -17,7 +17,6 @@ public class TestedeClass extends HttpServlet{
 		try {
 			PrintWriter pw = res.getWriter();
 			pw.println("");
-			String nome = req.getParameter("nome");
 			RequestDispatcher rd = req.getRequestDispatcher("./.jsp");
 			rd.forward(req, res);
 			

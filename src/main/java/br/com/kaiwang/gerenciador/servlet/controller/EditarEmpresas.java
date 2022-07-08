@@ -1,6 +1,6 @@
 package br.com.kaiwang.gerenciador.servlet.controller;
 
-import br.com.kaiwang.gerenciador.servlet.models.ArrayEmpresas;
+import br.com.kaiwang.gerenciador.servlet.models.DataBase;
 import br.com.kaiwang.gerenciador.servlet.models.Empresa;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,7 +16,9 @@ public class EditarEmpresas extends HttpServlet {
 		System.out.println("ENTROU NA ROTA FINALIZAR EDITAR");
 		try {
 			System.out.println("ENTROU NO TRY");
-			ArrayEmpresas empresas = new ArrayEmpresas();
+			
+			DataBase empresas = new DataBase();
+			System.out.println("EMPRESAS: " + empresas.getEmpresas());
 			
 			String nome = request.getParameter("nome");
 			String reqID = request.getParameter("id");
@@ -24,7 +26,7 @@ public class EditarEmpresas extends HttpServlet {
 			
 			Empresa empresa = empresas.getEmpresa(id);
 			empresa.setNome(nome);
-			
+			System.out.println("EMPRESAS: " + empresas.getEmpresas());
 			
 			response.sendRedirect("entrada?acction=listarEmpresas");
 		}catch(Exception err) {

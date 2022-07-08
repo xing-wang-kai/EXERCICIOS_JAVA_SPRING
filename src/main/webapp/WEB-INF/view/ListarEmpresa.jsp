@@ -4,16 +4,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/gerenciador/src/main/webapp/style.css" />
+<title>ROTA LISTAR</title>
 </head>
 <body>
 
 <h1>Empresa:</h1><br/>
-	<ul>
+<h2> USUÁRIO LOGADO:  ${ usuarioLogado.login } </h2>
+<h2><a href="entrada?acction=logout">SAIR</a></h2>
 
+	<ul>
 		<% 
-		ArrayList<Empresa> lista = (ArrayList<Empresa>)request.getAttribute("empresas");
+		ArrayList<Empresa> lista = (ArrayList<Empresa>) request.getAttribute("empresas");
 		for(Empresa empresa: lista)
 		{ 
 		%>
@@ -36,7 +41,8 @@
 		}; 
 		%>
 	</ul>
-	<form action="/gerenciador/formulario.jsp">
+	<form action="/gerenciador/entrada">
+		<input type="hidden" value="formulario" name="acction"/>
 		<input value="voltar Formulario" type="submit"/>
 	</form>
 

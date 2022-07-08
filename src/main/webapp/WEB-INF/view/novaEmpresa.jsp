@@ -6,8 +6,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<title>Pagina de cadastro de empresa</title>
+	<link rel="stylesheet" type="text/css" href="/gerenciador/src/main/webapp/style.css" />
+	<title>ROTA CRIAR</title>
 </head>
 <body>
 	
@@ -15,7 +15,7 @@
 		<legend><h1> EMPRESA CADASTRADA: </h1></legend>
 
 			<h1>${ empresa }</h1>
-		<form action="/gerenciador/formulario.jsp">
+		<form action="/gerenciador/bem-vindo.jsp">
 			<input value="voltar Formulario" type="submit"/>
 		</form>
 	</fieldset>	

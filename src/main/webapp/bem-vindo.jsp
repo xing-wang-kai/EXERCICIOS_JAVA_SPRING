@@ -8,7 +8,10 @@
 </head>
 <body>
 	<h1>BEM VINDOS</h1>
+	<button><a href="/gerenciador/entrada?acction=formNovoUser">LOGIN</a></button>
+	
 	<button><a href="/gerenciador/entrada?acction=listarEmpresas">LISTAR EMPRESAS</a></button>
-	<button><a href="/gerenciador/entrada?acction=criarEmpresa">CRIAR EMPRESAS</a></button>
+	
+	<button><a href="/gerenciador/entrada?acction=formulario">CRIAR EMPRESAS</a></button>
 </body>
 </html>
