@@ -13,20 +13,17 @@ public class EditarEmpresas extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("ENTROU NA ROTA FINALIZAR EDITAR");
+		
 		try {
-			System.out.println("ENTROU NO TRY");
 			
 			DataBase empresas = new DataBase();
-			System.out.println("EMPRESAS: " + empresas.getEmpresas());
-			
+		
 			String nome = request.getParameter("nome");
 			String reqID = request.getParameter("id");
 			Integer id = Integer.parseInt(reqID);
 			
 			Empresa empresa = empresas.getEmpresa(id);
 			empresa.setNome(nome);
-			System.out.println("EMPRESAS: " + empresas.getEmpresas());
 			
 			response.sendRedirect("entrada?acction=listarEmpresas");
 		}catch(Exception err) {

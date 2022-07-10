@@ -23,8 +23,6 @@
             <input type="hidden" name="acction" value="listarEmpresas"/><br/>
             <input class="button" type="submit" value="LISTAR EMPRESAS">
         </form>
-        
-   
     </fieldset>
     
 </body>

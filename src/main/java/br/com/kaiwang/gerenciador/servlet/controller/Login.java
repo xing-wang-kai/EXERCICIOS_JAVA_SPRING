@@ -16,8 +16,8 @@ public class Login {
 		String login = request.getParameter("login");
 		String senha = request.getParameter("password");
 		
-		DataBase array = new DataBase();
-		User usuario = array.existUser(login, senha);
+		DataBase database = new DataBase();
+		User usuario = database.existUser(login, senha);
 		
 		if(usuario != null) {
 			HttpSession sessao = request.getSession();

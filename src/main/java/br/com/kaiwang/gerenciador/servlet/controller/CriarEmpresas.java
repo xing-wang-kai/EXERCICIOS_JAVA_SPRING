@@ -18,11 +18,7 @@ public class CriarEmpresas {
 			return "Forward:/novaEmpresa.jsp";
 			
 		}catch(Exception err) {
-			System.out.println("MESSAGE: " + err.getMessage());
-			
 			return "Forward:/Error.jsp";
 		}
-		
-		
 	}
 }

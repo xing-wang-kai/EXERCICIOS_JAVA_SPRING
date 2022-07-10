@@ -45,12 +45,11 @@ public class DataBase {
 	public void removeById(int id) {
 		
 		List<Empresa> empresas = this.getEmpresas();
-		for(Empresa empresa: empresas) {
+		empresas.forEach((empresa) -> {
 			if(empresa.getId() == id) {
-				DataBase.empresa.remove(empresa);
+				empresas.remove(empresa);
 			}
-		}
-		
+		});		
 	}
 	public User existUser(String login, String senha) {
 		for(User use: user) {
