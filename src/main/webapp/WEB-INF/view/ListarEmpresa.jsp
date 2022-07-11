@@ -26,7 +26,7 @@
 
 	<ul>
 		<c:forEach items="${ empresas }" var="empresa">
-			<li>empresa: ${ empresa.nome } - abertura: <f:formatDate value="${empresa.data }" /> </li>
+			<li>empresa: ${ empresa.nome } - abertura: <f:formatDate value="${empresa.data }" pattern="dd/MM/yyyy" /> </li>
 			<form action="/gerenciador/entrada" method="get">
 				<input type="hidden" value="removerEmpresa" name="acction" /> <input
 					type="hidden" value="${empresa.id }" name="id" /> <input

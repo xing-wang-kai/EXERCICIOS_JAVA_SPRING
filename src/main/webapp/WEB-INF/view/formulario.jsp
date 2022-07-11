@@ -15,6 +15,7 @@
         
         <form action="/gerenciador/entrada" method="post">
             <label>Nome: <input type="text" name="nome"/></label><br/>
+            <label>Data: <input type="date" name="data"/></label><br/>
             <input type="hidden" value="criarEmpresa" name="acction"/>
             <input class="button" type="submit" value="CADASTRAR">
         </form>

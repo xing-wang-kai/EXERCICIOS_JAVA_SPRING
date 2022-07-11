@@ -1,6 +1,7 @@
 package br.com.kaiwang.gerenciador.servlet.models;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DataBase {
@@ -10,8 +11,11 @@ public class DataBase {
 	
 	public DataBase() {
 		Empresa e1 = new Empresa("SamSung");
+		e1.setData(new Date());
 		Empresa e2 = new Empresa("Motorola");
+		e2.setData(new Date());
 		Empresa e3 = new Empresa("Apple");
+		e3.setData(new Date());
 		
 		empresa.add(e1);
 		empresa.add(e3);
